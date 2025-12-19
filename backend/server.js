@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connect MongoDB
-mongoose.connect("mongodb+srv://kujebretihehe:TUAPASSWORD@cluster0.chprsdy.mongodb.net/wallet?retryWrites=true&w=majority", 
+mongoose.connect("mongodb+srv://kujebretihehe:Kosova123@cluster0.chprsdy.mongodb.net/wallet?retryWrites=true&w=majority", 
   { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
@@ -107,5 +107,6 @@ app.post("/do-task", async (req,res)=>{
 });
 
 app.listen(5000,()=>console.log("Server running with referral"));
+
 
 
