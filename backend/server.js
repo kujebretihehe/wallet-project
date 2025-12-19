@@ -8,13 +8,8 @@ app.use(express.json());
 app.use(cors());
 
 // Connect MongoDB
-const mongoUri = process.env.MONGO_URI; // ky vjen nga Render
-if (!mongoUri) {
-  console.error("ERROR: MONGO_URI nuk është vendosur!");
-  process.exit(1);
-}
-
-mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://kujebretihehe:TUAPASSWORD@cluster0.chprsdy.mongodb.net/wallet?retryWrites=true&w=majority", 
+  { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.error("MongoDB connection error:", err));
 
@@ -112,4 +107,5 @@ app.post("/do-task", async (req,res)=>{
 });
 
 app.listen(5000,()=>console.log("Server running with referral"));
+
 
